@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nanumsol.www.dao.BoardMapper">
+    
+    <!-- 게시판 -->
+    <select id="selectAll" resultType="BoardDto">
+        SELECT * FROM emp_tb
+        ORDER BY emp_no
+    </select>
+    
+    <!-- insert 태그 사용 / resultSet 속성 필요 없음 -->
+    <!-- 사원 정보 등록 쿼리 -->
+    <insert id="empDataInsert">
+        INSERT INTO emp_tb(emp_no,ename_kr,emp_rrno,join_date) 
+        	VALUES
+        		<!-- || = 문자열 합치기 -->
+        		<!-- NVL = Null Value의 약자로써, Null값일 경우 default값을 N으로 두기 -->
+        		<!-- SUBSTR = 앞 문자에서 N번째까지 자르겠다. -->
+        		
+       			('NM'||(SELECT NVL(SUBSTR(MAX(EMP_NO),3),1000)+1 FROM EMP_TB ),
+       			#{ename_kr},
+       			#{emp_rrno_F}||'-'||#{emp_rrno_B},
+       			
+       			<!-- sysdate = oracle문법 / 현재 날짜를 출력함 -->
+       			sysdate
+       			)
+    </insert>
+    
+    <!-- 사원 상세정보 조회 -->
+    <select id="select" resultType="BoardDto">
+        SELECT * FROM emp_tb
+        WHERE emp_no = #{emp_no }
+    </select>
+    
+    </mapper>
