@@ -34,12 +34,6 @@ public class EmpController {
 		return "emp/board";
 	}
 	
-	//메인화면 이동
-	@GetMapping("")
-	public String mian() {
-		return "main";
-	}
-	
 	//사원 등록 화면 이동
 	@GetMapping("empInsert")
 	public String empInsert() {

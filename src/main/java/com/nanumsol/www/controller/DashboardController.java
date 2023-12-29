@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DashboardController {
 	
 	//대시보드 이동
-	@GetMapping("dashBoard")
+	@GetMapping("dashboard")
 	public String dashBoard() {
-		return "dashBoard/dashBoard";
+		return "dashboard/dashboard";
 	}
 
 }

@@ -11,7 +11,7 @@
 	<a href="/">메인</a>
 	
 	<!-- 대시보드 이동 -->
-	<a href="dashBoard/dashBoard">대시보드</a>
+	<a href="dashboard">대시보드</a>
 	
 	<!-- 사원 게시판 이동 -->
 	<a href="empBoard">사원</a>
@@ -20,7 +20,7 @@
 	<a href="projectBoard">프로젝트</a>
 	
 	<!-- 프로젝트 배정 화면 이동 -->
-	<a href="asgn">배정</a>
+	<a href="assignment">배정</a>
 	
 	<!-- 가로선 S -->
 	<hr>
