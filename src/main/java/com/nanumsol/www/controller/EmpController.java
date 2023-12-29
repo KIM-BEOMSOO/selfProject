@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nanumsol.www.domain.BoardDto;
-import com.nanumsol.www.service.BoardService;
+import com.nanumsol.www.service.employee.BoardService;
 
 @Controller
 public class EmpController {
@@ -35,26 +35,13 @@ public class EmpController {
 	}
 	
 	//메인화면 이동
-	@RequestMapping("")
+	@GetMapping("")
 	public String mian() {
 		return "main";
 	}
 	
-	//배정화면 이동
-	@RequestMapping("asgn")
-	public String asgn() {
-		return "emp/asgn";
-	}
-	
-	//대시보드 이동
-	@RequestMapping("dashBoard")
-	public String dashBoard() {
-		return "emp/dashBoard";
-	}
-	
-	
 	//사원 등록 화면 이동
-	@RequestMapping("empInsert")
+	@GetMapping("empInsert")
 	public String empInsert() {
 		return "emp/empInsert";
 	}
@@ -75,13 +62,7 @@ public class EmpController {
 		m.addAttribute(list);
 		return "emp/empBoard";
 	}
-	
-	//프로젝트 게시판 이동
-	@RequestMapping("projectBoard")
-	public String project() {
-		return "emp/projectBoard";
-	}
-	
+
 	//사원 정보 등록
 	@PostMapping("empDataInsert")
 	//사용자에게 입력받을 변수를 매개변수로 넣어줌 

@@ -53,6 +53,8 @@
 		</tr>
 	</table>
 	
+	옹옹
+	
 	<script>
 		document.getElementById("moveEmpInsertPage").addEventListener("click", function() {
 		    location.href = "empInsert"; // empInsert.jsp 페이지로 이동

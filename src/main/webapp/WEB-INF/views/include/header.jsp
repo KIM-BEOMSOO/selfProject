@@ -8,10 +8,10 @@
 </head>
 <body>
 	<!-- 메인 이동 -->
-	<a href="main">메인</a>
+	<a href="/">메인</a>
 	
 	<!-- 대시보드 이동 -->
-	<a href="dashBoard">대시보드</a>
+	<a href="dashBoard/dashBoard">대시보드</a>
 	
 	<!-- 사원 게시판 이동 -->
 	<a href="empBoard">사원</a>
