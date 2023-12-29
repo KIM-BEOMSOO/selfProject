@@ -14,7 +14,7 @@
 	<a href="dashboard">대시보드</a>
 	
 	<!-- 사원 게시판 이동 -->
-	<a href="empBoard">사원</a>
+	<a href="employeeListBoard">사원</a>
 	
 	<!-- 프로젝트 게시판 이동 --> 
 	<a href="projectBoard">프로젝트</a>

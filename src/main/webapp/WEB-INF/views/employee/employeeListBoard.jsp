@@ -48,7 +48,7 @@
 		</tr>
 		<tr>
 			<td colspan="4" align="center">
-				<input type="button" onclick="location.href='main'" value="홈">
+				<input type="button" onclick="location.href='/'" value="메인 페이지 이동">
 			</td>
 		</tr>
 	</table>

@@ -19,6 +19,23 @@ public class EmpController {
 	@Autowired 
 	BoardService boardService;
 	
+	//사원 게시판 이동
+	//사원 게시판 = 데이터 유출이 중요하지 않아서 Get으로 정보를 가져옴
+	@GetMapping("employeeListBoard")
+	public String empBoard(Model m) throws Exception{
+		//BoardDto에 담긴 쿼리 결과값을 list에 담음 
+		List<BoardDto> list = boardService.selectAll();
+		//Model객체에 list값 저장 (jsp에서 list라는 변수에 접근하여 쿼리 결과 확인 가능
+		m.addAttribute("list",list);
+		
+		//m.addAttribute("저장할 변수명", 저장될 값)을 적지 않고, 
+		//m.addAttribute(저장될 값) << 이렇게 넣어줄 수 있다. 
+		//m.addAttribute(저장될 값) << 이렇게 작성할 경우, "저장할 변수명"은 데이터 타입의 앞 글자를 소문자로 한 값으로 저장된다 
+		// 즉, "list"가 변수명이 된다
+		m.addAttribute(list);
+		return "employee/employeeListBoard";
+	}
+	
 	//URL에 board/read가 입력되면 아래 메서드 실행
 	@GetMapping("board/read")
 	//사용자에게 emp_no를 받고, 이를 보여주기 위한 Model객체 생성
@@ -31,30 +48,13 @@ public class EmpController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "emp/board";
+		return "employee/board";
 	}
 	
 	//사원 등록 화면 이동
-	@GetMapping("empInsert")
+	@GetMapping("emplyeeDataInsertForm")
 	public String empInsert() {
-		return "emp/empInsert";
-	}
-	
-	//사원 게시판 이동
-	//사원 게시판 = 데이터 유출이 중요하지 않아서 Get으로 정보를 가져옴
-	@GetMapping("empBoard")
-	public String empBoard(Model m) throws Exception{
-		//BoardDto에 담긴 쿼리 결과값을 list에 담음 
-		List<BoardDto> list = boardService.selectAll();
-		//Model객체에 list값 저장 (jsp에서 list라는 변수에 접근하여 쿼리 결과 확인 가능
-		m.addAttribute("list",list);
-		
-		//m.addAttribute("저장할 변수명", 저장될 값)을 적지 않고, 
-		//m.addAttribute(저장될 값) << 이렇게 넣어줄 수 있다. 
-		//m.addAttribute(저장될 값) << 이렇게 작성할 경우, "저장할 변수명"은 데이터 타입의 앞 글자를 소문자로 한 값으로 저장된다 
-		// 즉, "list"가 변수명이 된다
-		m.addAttribute(list);
-		return "emp/empBoard";
+		return "employee/emplyeeDataInsertForm";
 	}
 
 	//사원 정보 등록
