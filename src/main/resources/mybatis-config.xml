@@ -4,6 +4,6 @@
 		"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="BoardDto" type="com.nanumsol.www.domain.BoardDto"/>
+		<typeAlias alias="BoardDto" type="com.nanumsol.www.dto.BoardDto"/>
 	</typeAliases>
 </configuration>

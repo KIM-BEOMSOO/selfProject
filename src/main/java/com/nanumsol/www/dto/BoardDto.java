@@ -1,4 +1,4 @@
-package com.nanumsol.www.domain;
+package com.nanumsol.www.dto;
 
 public class BoardDto {
 	private String emp_no; //사원번호

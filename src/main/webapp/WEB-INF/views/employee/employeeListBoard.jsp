@@ -40,7 +40,7 @@
 			<c:forEach var="board" items="${list }">
 				<tr>
 					<td><c:out value="${board.emp_no }"/></td>
-					<td><a href="<c:url value='board/read?emp_no=${board.emp_no }'/>"><c:out value="${board.ename_kr }"/></a></td>
+					<td><a href="<c:url value='employeeDetail?emp_no=${board.emp_no }'/>"><c:out value="${board.ename_kr }"/></a></td>
 					<td><c:out value="${board.emp_rrno}"/></td>
 					<td><c:out value="${board.join_date }"/></td>
 				</tr>
@@ -57,7 +57,7 @@
 	
 	<script>
 		document.getElementById("moveEmpInsertPage").addEventListener("click", function() {
-		    location.href = "empInsert"; // empInsert.jsp 페이지로 이동
+			location.href = "empInsert"; // empInsert.jsp 페이지로 이동
 		});
 	</script>
 	

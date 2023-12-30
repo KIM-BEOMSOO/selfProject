@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.nanumsol.www.domain.BoardDto;
+import com.nanumsol.www.dto.BoardDto;
 import com.nanumsol.www.service.employee.BoardService;
 
 @Controller
@@ -36,28 +36,22 @@ public class EmpController {
 		return "employee/employeeListBoard";
 	}
 	
-	//URL에 board/read가 입력되면 아래 메서드 실행
-	@GetMapping("board/read")
-	//사용자에게 emp_no를 받고, 이를 보여주기 위한 Model객체 생성
-	public String read(String emp_no, Model m) {
-		//try-catch를 안해줘서 에러 발생
-		//자동완성으로 만들어줌
-		try {
-			BoardDto boardDto = boardService.read(emp_no);
-			m.addAttribute("boardDto", boardDto);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "employee/board";
+	/* 사원 상세정보 화면 이동 */
+	@GetMapping("employeeDetail")
+	public String read(String emp_no, Model m) throws Exception {
+		BoardDto boardDto = boardService.read(emp_no);
+		m.addAttribute("boardDto", boardDto);
+
+		return "employee/employeeDetail";
 	}
 	
-	//사원 등록 화면 이동
+	/* 사원 등록 화면 이동 */
 	@GetMapping("emplyeeDataInsertForm")
 	public String empInsert() {
 		return "employee/emplyeeDataInsertForm";
 	}
 
-	//사원 정보 등록
+	/* 사원 정보 등록 */
 	@PostMapping("empDataInsert")
 	//사용자에게 입력받을 변수를 매개변수로 넣어줌 
 	public String empDataInsert(BoardDto boardDto) throws Exception {

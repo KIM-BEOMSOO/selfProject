@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.nanumsol.www.dao.BoardDao;
-import com.nanumsol.www.domain.BoardDto;
+import com.nanumsol.www.dao.employee.BoardDao;
+import com.nanumsol.www.dto.BoardDto;
 
 @Repository
 public class BoardServiceImpl implements BoardService {
