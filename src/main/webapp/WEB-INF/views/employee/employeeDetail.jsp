@@ -34,14 +34,22 @@
 			<td><c:out value='${boardDto.join_date }'/></td>
 		</tr>
 		<tr>
-			<!-- 사원정보 게시판으로 돌아가는 버튼 -->
-			<td colspan="2" align="center"><button type="button" id="returnEmployeeListBoard">게시판 이동</button></td>
+			<td colspan="2" align="center">
+				<button type="button" id="returnEmployeeListBoard">게시판 이동</button>
+				<button type="button" id="moveToEmployeeInformationModifyForm">수정</button>
+			</td>
 		</tr>
 	</table>
 	
 	<script type="text/javascript">
+		/* 게시판 이동 */
 		document.getElementById("returnEmployeeListBoard").addEventListener("click",function(){
 			location.href="<c:url value='employeeListBoard'/>"
+		});
+		
+		/* 사원정보 수정 화면으로 이동*/
+		document.getElementById("moveToEmployeeInformationModifyForm").addEventListener("click",function(){
+			location.href="<c:url value='employeeInformationModifyForm?emp_id=${boardDto.emp_no }'/>"
 		});
 	</script>
 
